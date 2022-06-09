@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-8" *ngFor="let hero of heroes">
+    <h2>{{ hero.name | uppercase }}' details</h2>
+    <span>id: {{hero.id}}</span><br>
+    <button class="btn btn-primary" (click)="onSelect(hero)">{{hero.name}}</button>
+    <input [(ngModel)]="hero.name">
+    <hr>
+    <hr>
+  </div>
+
+  <div class="col-4">
+    <app-hero-detail [hero]="selectedHero" *ngIf="selectedHero"></app-hero-detail>
+  </div>
+</div>
